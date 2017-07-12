@@ -1,11 +1,4 @@
-<div id="content" class="container">
-    <header id="content-header">
-        <div id="price-container">
-          <span class="glyphicon glyphicon-tag"></span><span class="price">$9.99</span>
-        </div>
-        <%= image_tag('header-image.jpg', id: 'content-head-img', alt: 'Learn Rails!') %>
-    </header>
-    <section id="content-details" class="row clearfix">
+<section id="content-details" class="row clearfix">
         <article id="details-article" class="col-sm-8">
             <h1 id="article-title">Your Product <span class="font-weight-light">Product Name</span></h1>
            
@@ -21,7 +14,26 @@
             </ul>
         </article>
         <aside id="details-aside" class="col-sm-4">
-            <a id="btn-buy" href="receipt.html" class="btn btn-success btn-lg btn-block"><span class="glyphicon glyphicon-ok"></span>Get it!</a>
+            <a id="btn-buy" href="receipt.html" class="btn btn-success btn-lg btn-block">
+              <span class="glyphicon glyphicon-ok"></span>Get it!</a>
+              <%= form_tag  do %>
+            <article>
+              <% if flash[:error].present? %>
+                <div id="error_explanation">
+                  <p><%= flash[:error] %></p>
+                </div>
+              <% end %>
+              <label class="amount">
+                <span>Amount: $5.00</span>
+              </label>
+            </article>
+          
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key=""
+                    data-description="A month's subscription"
+                    data-amount="500"
+                    data-locale="auto"></script>
+          <% end %>
             <ul id="details-infobox" class="list-group">
               <li class="list-group-item active clearfix">Info</li>
               <li class="list-group-item">What You Get</li>
@@ -33,10 +45,3 @@
 <footer id="site-footer">
 Made by <a href="#" target="_blank"><p>Learn Rails</p></a>
 </footer>
- 
-<!-- Scripts -->
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="js/lib/bootstrap.min.js"></script>
- 
-
-
