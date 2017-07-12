@@ -26,6 +26,8 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 # add twitter bootstrap
 gem 'bootstrap-sass'
+#stripe for making payments
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
