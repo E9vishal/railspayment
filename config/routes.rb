@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'pages#home'
- end
+  resources :charges, only: [:new, :create]
+  
+  get '/submit', to: 'charges#new'
+  
+  resources :posts
+  root to: 'pages#home'
+end

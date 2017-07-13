@@ -13,6 +13,7 @@ gem 'sqlite3', group: [:development, :test]
 # postgres sql for production database
 gem 'pg', group: :production
 # Use Puma as the app server
+gem 'dotenv-rails', :groups => [:development, :test]
 gem 'puma', '~> 3.0'
 # gem for factor
 gem 'rails_12factor',group: :production
@@ -27,7 +28,7 @@ gem 'coffee-rails', '~> 4.2'
 # add twitter bootstrap
 gem 'bootstrap-sass'
 #stripe for making payments
-gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'stripe', '~> 3.0', '>= 3.0.1'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
